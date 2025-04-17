@@ -7,10 +7,7 @@ import {
 
 
 const createUpcomingProductCard = data => {
-  const upcomingSection = document.querySelector('#upcoming-product');
-  console.log(upcomingSection)
-  console.log(data)
-  
+  const upcomingSection = document.querySelector('#upcoming-product'); 
   let htmlFragment=""
   for (let i = 0; i < 4; i++) {
     htmlFragment=htmlFragment.concat(" ", upcomingProduct(data[i].id, data[i].image, data[i].text))
@@ -28,15 +25,11 @@ const createUpcomingProductCard = data => {
 };
 const createProductCard = data => {
   const productSection = document.querySelector('#product-list');
-  console.log(productSection)
-  console.log(data)
   let htmlFragment=""
   for (let i = 0; i < 14; i++) {
     htmlFragment=htmlFragment.concat(" ", product(data[i].id, data[i].image, data[i].text))
   }
   productSection.innerHTML = htmlFragment
- 
-
 };
 
 const banerInsertion = ()=>{
@@ -50,16 +43,14 @@ const banerInsertion = ()=>{
 
 (async function getData() {
     const url = "https://brandstestowy.smallhost.pl/api/random?pageNumber=1&pageSize=20";
+    
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-  
-      const contentData = await response.json();
 
-      if(contentData.data.length===0)
-        console.log(contentData.data.length); 
+      const contentData = await response.json();
 
       if(contentData.data.length!==0){
         createUpcomingProductCard(contentData.data)

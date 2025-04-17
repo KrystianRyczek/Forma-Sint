@@ -7,8 +7,6 @@ import {
 
 window.addEventListener('click', event => {
     const action = event.target.dataset.action
-    console.log(event.target.dataset.action)
-    //console.log(event.target.parentElement)
 
     if( action === "openModla"){
         const modal = document.querySelector('#modla-box')
