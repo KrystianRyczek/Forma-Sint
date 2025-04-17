@@ -32,7 +32,6 @@ window.addEventListener('click', event => {
 
 
   window.addEventListener("resize", ()=>{
-    console.log(window.screen.width)
     const element = document.querySelector('#baner')
     element !== null? element.remove(): false 
 
