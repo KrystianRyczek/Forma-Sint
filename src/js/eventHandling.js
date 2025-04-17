@@ -1,6 +1,7 @@
 import {
     baner,
-    catBox
+    catBox,
+    modalContent
   } from './htmlFragment';
 
 
@@ -10,6 +11,8 @@ window.addEventListener('click', event => {
     //console.log(event.target.parentElement)
 
     if( action === "openModla"){
+        const modal = document.querySelector('#modla-box')
+        modal.innerHTML = modalContent(event.target.dataset.src)
         const element = document.querySelector('#backdrop')
         element.classList.add('modal-open')
     }
