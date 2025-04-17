@@ -14,7 +14,7 @@ export const upcomingProduct = (
                             </svg>
                         </div>
                         <picture data-action="openModla">
-                            <img class="upcoming-product-image" src=${imgSrc} alt="product photo" data-action="openModla" data-src="${imgSrc}">
+                            <img class="upcoming-product-image" src=${imgSrc} alt="product photo" data-action="openModla" data-src="${imgSrc}" data-id="${id}">
                         </picture>
 
                     </div>
@@ -48,7 +48,7 @@ export const upcomingProduct = (
                 <div class="product-item-box">
                     <h3 class="product-item-h">ID: ${id}</h3>
                     <picture>
-                        <img class="product-item-image" src="${imgSrc}" alt="product photo" data-action="openModla" data-src="${imgSrc}">
+                        <img class="product-item-image" src="${imgSrc}" alt="product photo" data-action="openModla" data-src="${imgSrc}" data-id="${id}">
                     </picture>
                 </div>
             </li>`
@@ -59,10 +59,11 @@ export const upcomingProduct = (
             </li>`
   }
   export const modalContent = (
-    imgSrc,
+    id,
+    imgSrc
   )=>{
     return`
-                <h3 class="modal-id">ID: 01</h3>
+                <h3 class="modal-id">ID:${id}</h3>
                 <picture>
                     <img class="modla-image" src="${imgSrc}">
                 </picture>

@@ -10,7 +10,7 @@ window.addEventListener('click', event => {
 
     if( action === "openModla"){
         const modal = document.querySelector('#modla-box')
-        modal.innerHTML = modalContent(event.target.dataset.src)
+        modal.innerHTML = modalContent(event.target.dataset.id, event.target.dataset.src)
         const element = document.querySelector('#backdrop')
         element.classList.add('modal-open')
     }
